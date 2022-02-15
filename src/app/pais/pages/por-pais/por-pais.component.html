@@ -21,27 +21,6 @@
 
 <div *ngIf="!hayError" class="row">
     <div class="col">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Bandera</th>
-                    <th>Nombre</th>
-                    <th>Población</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of paises; let i=index">
-                    <td>{{i+1}}</td>
-                    <td><img class="small-flag" [src]="item.flags.png"></td>
-                    <td>{{item.name.common}}</td>
-                    <td>{{item.population | number}}</td>
-                    <td>
-                        <a [routerLink]="['/pais,i']">ver...</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-pais-tabla [paises]="paises" ></app-pais-tabla>
     </div>
 </div>
