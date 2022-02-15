@@ -20,7 +20,8 @@ export class PorPaisComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar() {
+  buscar(termino: string) {
+    this.termino = termino;
     this.hayError = false;
     console.log(this.termino);
 
@@ -37,6 +38,12 @@ export class PorPaisComponent implements OnInit {
       console.info(err);
       this.hayError = true;
     });
+  }
+
+  sugerencias(event:string) {
+    this.hayError = false;
+
+    console.log("Sugerencias", event);
   }
 
 }

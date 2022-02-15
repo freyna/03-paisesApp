@@ -3,13 +3,9 @@
 
 <div class="row">
     <div class="col">
-        <form autocomplete="off" (ngSubmit)="buscar()" >
-            <input type="text"
-                    name="termino"
-                    class="form-control"
-                    placeholder="Buscar país..."
-                    [(ngModel)]="termino">
-        </form>
+        <app-pais-input 
+        (onEnter)="buscar( $event )"
+        (onDebounce)="sugerencias( $event )"></app-pais-input>
     </div>
 </div>
 
