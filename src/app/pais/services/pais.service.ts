@@ -29,4 +29,10 @@ export class PaisService {
     const url = `${this.apiUrl}/region/${termino}`
     return this.http.get<Pais[]>(url);
   }
+
+  obtenerPorCodigo (termino: string): Observable<Pais[]>{ 
+
+    const url = `${this.apiUrl}/alpha/${termino}`
+    return this.http.get<Pais[]>(url);
+  }
 }
